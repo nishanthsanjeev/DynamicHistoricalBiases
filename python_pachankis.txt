@@ -1,0 +1,63 @@
+Word embedding label	List 1
+autistic	autistic autism disability brain retardation disorder syndrome deficit abnormality behavior awareness handicapped behavioral neurological impaired mental mentally disable retarded schizophrenic hyperactive cognitive hyperactivity compulsive
+bipolar	bipolar manic mania disorder depression synapse mood psychotherapy illness psychiatric mental depressed diagnose depressive psychotic
+blind	blind visionless blindness darkness vision eye disability impairment retina blinded impaired handicapped disable visually partially disabled unable
+cleft	cleft palate abnormality anomaly defect chin surgery jaw mouth lip congenital facial abnormal deformed deform deformity
+deaf	deaf deafened hearing interpreter impairment disability implant interpreting subtitle institution inclusion impaired disable disabled
+scarred	scarred wounded scar wound claw deformed scratched scorched slashed bruise mutilate ravage badly permanently terribly marred mar mutilated
+retarded	retarded stupid retardation disability deficiency abnormality dysfunction handicapped developmental mental congenital institutionalize disable impair mentally emotionally severely intellectually
+disabled	disabled cripple disable accessibility wheelchair rehab rehabilitation impairment paralysis crutch handicapped disadvantaged disability
+schizophrenic	schizophrenic schizophrenia psychiatrist dopamine demented dementia praecox disorder psychotherapy dysfunction abnormality illness therapy cognition impairment psychiatric mental chronic abnormal diagnose mentally splitpersonality
+short	short midget little small pipsqueak dwarf smallness smaller low shorter
+mute	mute dumb stricken quiet inaudible quiescent muted aphasia inability lesion unable aphonia mutism dementia dysarthria broca wernicke paraphasia silent silence muffled
+stroke	stroke paralyzed hemorrhage dementia paralysis epilepsy parkinson neurological cerebral hospitalize hallucination hallucinations delusions delusion
+unattractive	unattractive ugly dull awkward negative dirty grimace deformed hideous disgusting grotesque ghastly horrid sickly
+wheelchair	handicapped wheelchair paralympic crutch sclerosis ramp accessibility impairment disability paralysis rehab rehabilitation cripple handicap sidewalk confined crippled motorize accommodate disable disabled
+alcoholic	alcoholic drinker alcoholism addict alcohol liquor drink drinking intoxication liver addiction relapse cider delirium drunk comsumption craving beer prohibition whisky abuse vodka addicted chronic sober
+std	std sti illness disease sickness infection condition ailment epidemic affliction case malady malaise pandemic syphilis aids virus hiv herpes venereal infect genital unsafe unprotected chlamydia gonorrhoea gonorrhea mono infectious burning transmit transmitted
+drug	addict druggie drug illegal cocaine addictive cartel overdose contra contraband smuggler smuggle substance coke illicit powdered abuse inhale snort dope crystal cooking dealer collector buyer narcotic meth heroin undercover deal sell buy crackhead junkie dopehead cannabis weed marijuana drugaddict
+criminal	criminal inmate prosecution offender sentencing tribunal felony crime offence incarceration prosecutor offense punishment justice indictment perpetrator probation convict parole imprisonment suspect conviction trial arrest prison jail jury detention penalty illegal guilty prosecute indict
+gang	gangster mobster violence crime gang youth robbery thug mafia robber outlaw boss mob notorious rival criminal fugitive infamous juvenile ruthless teenage offender ringleader miscreant syndicate
+homeless	homeless vagrant homelessness shelter outreach plight housing orphan orphanage charity assistance vagabond street runaway destitute impoverished evict displace poor needy orphans
+paroled	paroled excriminal probation offender prison sentence inmate convict jail custody serving criminal conviction surrender release eligibility correction pardon correctional convicted discharge
+molestor	maltreat molest rape attack harm hurt sexual touching touch violate abuse accused harass offend sexually
+asian	asian japanese chinese korean taiwanese tibetan phillipino yellowskinned chinks mongolian tibetan bangladeshi bhutanese indian nepalese pakistani burmese cambodian filipino indonesian malaysian thai racial stereotype minority amerasian sinophobia chinaman chink coolie brownie
+black	black african dark blacks colored africans negro race africanamerican afroamerican workingclass nonwhite historically segregation apartheid afro saharan liberia colonialism kenya nigeria nairobi
+latino	hispanic latino cuban mexican race population ethnicity puerto immigrant immigration spanish belize costa salvador guatemala honduras mexico nicaragua panama argentina bolivia brazil chile colombia colombian chilean brazilian argentinian ecuador guyana paraguay peru peruvian uruguay venezuela venezuelan caribbean cuba cuban haiti
+mideast	middleeastern orient israel palestinian palestine arab iraq syria asia iran iranian israeli muslim east eastern mediterranean oriental mideast jerusalem syrian egypt turkey bahrain cyprus lebanon oman qatar yemen turkish ankara baghdad beirut cairo istanbul mecca muscat
+multiracial	multiracial desegregated interracial multicultural diverse multiethnic biracial multilingual colored coloured
+native	native aboriginal aborigine alaska alaskan tribe inuit colonization totem inhabitant indigenous racial tribal natives eskimo navajo pueblo apache sioux cherokee hopi comache algonquin shawnee pawnee lakota pima alaska alaskan cheyenne
+old	old elderly older fashioned rusty familiar kind mature aged senior grey senile ancient decrepit ripe venerable
+indian	indian pakistani india asian bangladeshi bengali hindu gujarati gandhi rupee tamil malayalam hinduism kashmir kannada bihar haryana pradesh punjabi telugu pakistan pakistani bangladesh nepal nepalese nepali bhutan maldives lanka dravidian indoaryan assamese assam bhojpuri haryanvi odia nagpuri kashmiri kannadiga tibetan tibet arab turkish burmese
+asexual	asexual nonsexual celibacy celibate chastity chaste frigid sexless asexuality asexy sexfree agamous
+atheist	atheist infidel secular agnostic godless humanism humanist atheism rationalist apostate corporeal heterodox ungodly worldly heathen freethinker nonconformist nonconforming
+cancer	cancer chemo chemotherapy carcinoma carcinogen tumor biopsy screening prevention genetic prostate ovarian pancreatic cervical thyroid malignant cancerous tumour illness serious uncontrolled survivor malignancy cancerpatient
+depressed	depressed sad depression suicide insomnia serotonin patient anxiety psychotherapy disorder loneliness fatigue sadness suicidal gloomy sad hopeless hopelessness exhausted unhappy frustrate bipolar traumatic chronic illness disorders ptsd trauma stress traumatic suffer
+diabetic	diabetic hyperglycemic diabetes insulin sugar kidney anemia anaemia sick ill obesity hyperglycemia hyperglycaemia nausea weakness coma fatigue polyphagia polydipsia restlessness
+divorced	estrange divorce divorced unhappy separation alimony prenup separate visitation widow widower dissolve dissolution
+immigrant	immigrant migrant citizenship newcomer asylum migration settle expat expatriate naturalize residency immigration
+christian	christian fundamentalist catholic faith church evangelical religious christians baptist christianity religion protestant bible lutheran believe theology pastor churches secular biblical orthodox ministries methodist christ belief believers missionary worship tradition gospel spirituality preaching believer trinity devout grace hope
+abortion	abortion misbirth prevent prevents abort control abortionist pill termination fetus pregnancy legality ban prorights unborn unwanted
+attack	heartattack cardiac hypertension abnormality artery surgery arrest complication defect anomaly reflex bypass patient chest mortality stress diabetes coronary pulmonary vascular cardiovascular heart blood
+infertile	infertile childless sterile infertility barren impotent unfertile unfruitful infecund effete unbearing fruitless sterilized dysfunction childfree antinatalism
+transgender	transgender transvestite tranny trannie shemale ladyboy trans inclusive transition genderqueer agender sexless crossdressing crossdresser transsexual dysphoria trans twospirit hijra
+jewish	jewish jew judaism gentile devout zionist synagogue torah bethelem hebrew semitic yiddish kosher faith religious religion believe secular orthodox belief believers worship tradition spirituality preaching believer spiritual jews
+homosexual	homosexual gay gays lesbian lesbians bisexual lesbo queer lgbt sexuality pride marches march transgender sissy pansy janus nancy fairy brownie nelly homo faggot fag twinkie transvestite tribadism tribads tribades rubster fricatrice sodomy sodomite sodomites sapphics pederast homophile
+uneducated	uneducated ignorant layman inexperienced untrained illiterate uninitiated unskilled inexperience untutored unknowledgeable untaught uninformed unread unlettered unschooled catachresis inerudite
+psoriasis	psoriasis disease inflammatory skin cutaneous dry condition chronic plaque pain severe itch itching itchy inflammation disorder scaly red eczema dermatitis moles melanoma rosacea lupus acne hives rash wart
+unemployed	unemployed jobless unemployment recession poverty inactive welfare alms needy destitute poor impoverished deprived penniless pauper peasant welfare
+molested	raped molested molest harmed assaulted attempt savage prosecution prison attempted harass violated abused rape
+poor	poor beggar wretch alms slum malnutrition poverty starving sufferer disparity labourer laborer begging beg
+laborer	laborer bluecollar labor labour labourer artisan wage craftsman mechanic peasant farmer toil manual hard physical work builder bricklayer hardhat mason roofer tiler
+server	server tradesperson accounting tradesmanship mechanic plumber service services waiter bartender server public
+fat	fat fatty weight chubby obese eating calories fats eat plump belly diet big meat saturated overweight diets addiction dieting excess pounds unhealthy tubby stout chunky heavy hefty inflated potbelly potbellied oversize plumpish pudgy
+incontinent	incontinent bedwetter urinary fetal inability leakage dysfunction bowel urgency urge diarrhea catheter kidney involuntary stress mixed overflow frequent incontinence
+prostitute	prostitute whore prostitution brothel courtesan escort gigolo hooker pimp sex solicit soliciting streetwalker prostitutes
+pierced	pierced tattooed pierce nosering piercing implant earring jewellery stud skin tongue tattoo multiple inking ink pigment wearer marking cosmetic facial decorative elaborate body needle wrist forearm permanent tattooing piercings
+muslim	muslim islamic muslims moslem islam arab sunni religious islamist moslems arabs mosques religion secular
+polygamous	polygamous polygamy polyamory polyandry polygyny bigamy mormon mormons mormonism muslim algeria cameroon egypt gabon libya kenya morocco bangladesh bhutan pakistan somalia
+smoker	smoker pothead smoking cigarette tobacco cigar lung cigarettes smoke addiction puff fume habitual lifelong harmful inhale pack chronic
+alien	alien immigrant deport smuggling intruder infiltrate undocumented illegal unauthorized noncitizen
+hiv	hiv aids virus infection syphilis viral prevention stigma epidemic transmission infected intravenous unprotected genital gonorrhea herpes venereal disease
+herpes	herpes sore virus viral infected infect infectious disease painful aids gonorrhea syphilis venereal std chlamydia warts hiv
+dealer	dealer pusher drug collector buyer narcotic meth heroin cocaine undercover illicit deal sell buy crackhead junkie dopehead peddler trafficker supplier bagman
