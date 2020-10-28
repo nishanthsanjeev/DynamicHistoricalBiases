@@ -140,14 +140,25 @@ cohesion_permutations = 1000, cohesion_type = 2):
 		return permutations
 
 	allwords = list(X + A + B)
-	if table not in memorybank.keys():
-		memorybank[table] = {}
-	cache = [i for i in allwords if i in memorybank[table].keys()]
-	nocache = [i for i in allwords if i not in memorybank[table].keys()]
+	allwords = list(X + A + B)
 
-	if len(nocache) > 0:
+
+	### The following code snippet is used to create a cache of word vectors for fast access ###
+
+	### BEGINS HERE ###
+
+	if table not in memorybank.keys():#if the word vector table for a particular year has not been encountered yet, initialize a new space for it in memorybank
+		memorybank[table] = {}
+	cache = [i for i in allwords if i in memorybank[table].keys()]#if a word is present in memorybank, add to cache
+	nocache = [i for i in allwords if i not in memorybank[table].keys()]#if a word is not present in memorybank, add to nocache
+
+	if len(nocache) > 0:#Words that are in nocache have not been encountered yet, and so we must retrieve them from the database and store in cache for fast use
 		format_strings = ','.join(['?'] * len(nocache))
 		cur.execute('SELECT word, vector FROM {0} WHERE word IN ({1})'.format(table, format_strings), tuple(nocache))
+
+		# {0} is first argument
+		# {1} is second argument
+
 		Results = [(x[0], json.loads(x[1])) for x in cur.fetchall()]
 		for item in Results:
 			memorybank[table][item[0]] = (item[0], item[1])
@@ -157,30 +168,41 @@ cohesion_permutations = 1000, cohesion_type = 2):
 		for item in cache:
 			Results.append(memorybank[table][item])
 
+
+	'''
+	The structure of memorybank:
+
+	A dictionary of dictionaries.
+
+	memorybank[table] -> Access the dictionary corresponding to the table of vectors denoted by 'table'
+
+	memorybank[table][item] -> (word,vector) pairs for the year corresponding to the vector table called 'table'
+	'''
+
+
+	### ENDS HERE ###
 	
 	Cat1 = np.array([word[1] for word in Results if word[0] in X])
 	Att1 = np.array([word[1] for word in Results if word[0] in A])
 	Att2 = np.array([word[1] for word in Results if word[0] in B])
 
-	effect_list = []
+	Cat1w = np.array([word[0] for word in Results if word[0] in X])
+	Att1w = np.array([word[0] for word in Results if word[0] in A])
+	Att2w = np.array([word[0] for word in Results if word[0] in B])#storing the words as well!
 
-	effect_size = diff_sim(Cat1,Att1,Att2)
+	#Adding in the vectors from the word lists X, A and B, for all the non-missing words
+
+	effect_list = []#stores list of effect sizes 
+
+	effect_size = diff_sim(Cat1,Att1,Att2)#this is the effect_size calculated with all Category words included
 	
-	cnt=0
-	for x in range(0,len(Cat1)-1):
-		Cat2 = Cat1
-		if Cat2[x].all()==0.0:
-			#print(Cat2[x])
-			cnt+=1
-			continue
-		Cat2 = np.delete(Cat2,x,axis=0)
+	
+	for x in range(len(Cat1)):#iterate through each word in Cat1
+		Cat2 = Cat1#initialize a temporary list called 'Cat2', to be equal to Cat1
+		Cat2 = np.delete(Cat2,x,axis=0)#delete the 'x'th word from the category words, to calculate effect size for the list without it
 		val = diff_sim(Cat2,Att1,Att2)
-		if(x>1 and val==effect_list[-1:]):
-			continue
-		effect_list.append(diff_sim(Cat2,Att1,Att2))
+		effect_list.append(val)
 
-
-	#print(cnt)
 
 	missing = [word for word in allwords if word not in [res[0] for res in Results]]
 	result_dict = OrderedDict({
