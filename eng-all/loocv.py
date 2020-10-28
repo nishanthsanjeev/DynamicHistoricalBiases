@@ -140,8 +140,6 @@ cohesion_permutations = 1000, cohesion_type = 2):
 		return permutations
 
 	allwords = list(X + A + B)
-	allwords = list(X + A + B)
-
 
 	### The following code snippet is used to create a cache of word vectors for fast access ###
 
@@ -185,10 +183,6 @@ cohesion_permutations = 1000, cohesion_type = 2):
 	Cat1 = np.array([word[1] for word in Results if word[0] in X])
 	Att1 = np.array([word[1] for word in Results if word[0] in A])
 	Att2 = np.array([word[1] for word in Results if word[0] in B])
-
-	Cat1w = np.array([word[0] for word in Results if word[0] in X])
-	Att1w = np.array([word[0] for word in Results if word[0] in A])
-	Att2w = np.array([word[0] for word in Results if word[0] in B])#storing the words as well!
 
 	#Adding in the vectors from the word lists X, A and B, for all the non-missing words
 
@@ -267,7 +261,7 @@ if __name__ == '__main__':
 
 
 	df = pd.DataFrame.from_dict(results)
-	df.to_csv("loocv_results.csv", index = False)
+	df.to_csv("loocv_results.csv", index = False, sep = '\t')
     
     
 cnx.close()
