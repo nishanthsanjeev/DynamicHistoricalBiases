@@ -9,7 +9,7 @@ We utilize **HistWords**, a brilliant collection of pre-trained vectors availabl
 
 Here, we provide the tools to conduct analyses on the following corpora:
 
-Google N-grams eng-all
+Google N-grams eng-all <br />
 *Corpus of Historical American English* (COHA)
 
 ## Information on each file:
