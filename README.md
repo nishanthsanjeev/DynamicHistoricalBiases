@@ -12,6 +12,10 @@ Here, we provide the tools to conduct analyses on the following corpora:
 Google N-grams eng-all <br />
 *Corpus of Historical American English* (COHA)
 
+## Requirements:
+Python2 <br />
+Python3
+
 ## Information on each file:
 
 Note: When running the *freqscript.py* file - make sure to run using Python2!
