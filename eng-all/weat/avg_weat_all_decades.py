@@ -11,9 +11,10 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 import pickle
 import datetime
+import sys
 pp = PdfPages('Avg_EngAll_WEAT_Pachankis.pdf')
 
-cnx = sqlite3.connect('vectors.decades.db')
+cnx = sqlite3.connect('/home/nishanthsanjeev/Harvard/DynWE stuff/eng_all_sgns/vectors.decades.db')
 cnx.text_factory = str
 np.random.seed(111)
 
@@ -32,13 +33,15 @@ def weighted_std(values, weights):
 	variance = np.average((values-average)**2, weights=weights)
 	# Small sample size bias correction:
 	variance_ddof1 = variance*len(values)/(len(values)-1)
-	return sqrt(variance_ddof1)
+
+	return float(sqrt(variance_ddof1))
 
 def within_group_cohesion(X):
 	dist = spatial.distance.pdist(X, 'cosine')
 	return dist.mean()
 
 def group_cohesion_test(X, Y, perm_n = 1000, permtype = 1):
+
 
 	test_statistic = np.average((within_group_cohesion(X), within_group_cohesion(Y)),
 		weights = (len(X), len(Y)))
@@ -80,6 +83,9 @@ cohesion_permutations = 1000, cohesion_type = 2):
 		sum_A = 0
 		sum_B = 0
 
+		if len(X)==0 or len(A)==0 or len(B)==0:
+			return 0
+
 		all_sims = []
 		for a in A:
 			a_ = a.reshape(1, -1)
@@ -106,12 +112,13 @@ cohesion_permutations = 1000, cohesion_type = 2):
 		# For SD calculation, assign weights based on frequency of opposite category
 		weights = [len(B) for num in range(len(A))] + [len(A) for num in range(len(B))]
 		standard_dev = weighted_std(all_sims, weights)
+
+
+		if difference==0 or standard_dev==0:
+			return 0
 		effect_size = difference/standard_dev
 
-		#print(X[0] + " " + difference + " " + standard_dev + " ")
-		#print('\n')
-		#print(sum_A)
-
+		
 		return effect_size
 
 
@@ -127,6 +134,7 @@ cohesion_permutations = 1000, cohesion_type = 2):
 
 	def rand_test(X, A, B, perm_n):
 		jointlist = np.array(list(A) + list(B))
+		
 		np.random.shuffle(jointlist)
 		permutations = []
 		count = 0
@@ -140,6 +148,7 @@ cohesion_permutations = 1000, cohesion_type = 2):
 		return permutations
 
 	allwords = list(X + A + B)
+	
 	if table not in memorybank.keys():
 		memorybank[table] = {}
 	cache = [i for i in allwords if i in memorybank[table].keys()]
@@ -188,14 +197,15 @@ if __name__ == '__main__':
 
 	results = []
 
+	filename = sys.argv[1]
 
 	tablenames = ["vectors1800", "vectors1810", "vectors1820", "vectors1830", "vectors1840", "vectors1850",
 	 "vectors1860", "vectors1870", "vectors1880", "vectors1890", "vectors1900", "vectors1910", 
 	 "vectors1920", "vectors1930", "vectors1940", "vectors1950", "vectors1960", "vectors1970", 
 	 "vectors1980", "vectors1990"]
 
-	with open("python_pachankis.txt", 'r') as f:
-		f.readline()
+	with open(filename, 'r') as f:
+		#f.readline()
 
 		x = []
 		y = []
@@ -211,7 +221,7 @@ if __name__ == '__main__':
 
 				for table in tablenames:
 					
-					result_dict = s_weat(attribute, vecs["good"], vecs["bad"],  # changed attribute to a "vector" here
+					result_dict = s_weat(attribute[1:], vecs["good"], vecs["bad"],  # changed attribute to a "vector" here
 						permt=2, perm_n=1000, table = table, cohesion_test = True, cohesion_permutations = 1000, cohesion_type = 1)
 					result_dict["categories"] = "good vs. bad"
 					result_dict["attribute(s)"] = attribute[0] # here, we will want just the first item from each row of the attribute text document
@@ -251,10 +261,13 @@ if __name__ == '__main__':
 	pp.close()
 
 	df = pd.DataFrame.from_dict(results)
-	df.to_csv("avg_weat_pachankis.csv", index = False)
+	df.to_csv("avg_weat_pachankis.csv", index = False, sep='\t')
     
     
 cnx.close()
 
 
 print(datetime.datetime.now() - begin_time)
+
+#use case
+#$python weat_pachankis.py python_pachankis.txt
