@@ -14,7 +14,7 @@ import datetime
 import sys
 pp = PdfPages('Avg_EngAll_WEAT_Pachankis.pdf')
 
-cnx = sqlite3.connect('/home/nishanthsanjeev/Harvard/DynWE stuff/eng_all_sgns/vectors.decades.db')
+cnx = sqlite3.connect('vectors.decades.db')
 cnx.text_factory = str
 np.random.seed(111)
 
