@@ -10,7 +10,9 @@ We utilize **HistWords**, a brilliant collection of pre-trained vectors availabl
 Here, we provide the tools to conduct analyses on the following corpora:
 
 Google N-grams eng-all <br />
+Google N-grams eng-fic <br />
 *Corpus of Historical American English* (COHA)
+
 
 ## Requirements:
 Python2 <br />
