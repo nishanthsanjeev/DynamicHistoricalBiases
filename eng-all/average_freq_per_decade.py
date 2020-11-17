@@ -3,7 +3,7 @@ import json
 import random
 import numpy as np
 from scipy import spatial
-from itertools import combinations
+from itertools import combinations, cycle
 import pandas as pd
 from math import sqrt
 from collections import OrderedDict
@@ -11,7 +11,8 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_pdf import PdfPages
 import pickle
 import datetime
-pp = PdfPages('average_frequencies.pdf')
+import sys
+pp = PdfPages('avg_frequencies.pdf')
 
 cnx = sqlite3.connect('vectors.decades.db')
 cnx.text_factory = str
@@ -47,98 +48,91 @@ if __name__ == '__main__':
 		freq_list = pickle.load(fre)
 
 
+	filename = sys.argv[1]
 
-	with open("python_pachankis.txt", 'r') as f:
-		f.readline()
 
-		x = []
-		y = []
-		yminval = 1000
-		ymaxval = -1
+
+
+	with open(filename, 'r') as f:
+
+		
+
 		for line in f:
 			attribute = str(line.rstrip()).split()
 
-			try:
+			
 
-				minval = 1000
-				maxval = -1
+			plt.ylabel('Average frequency')
+			plt.xlabel('Decade')
 
-				
+			plt.title(attribute[0])
 
-				tot = 0
+			tot = 0.0
+			cnt=0
+			for word in attribute[1:]:
 
-				for table in tablenames:
+				try:
+					yminval = 1000#used to define the visible ranges in the plot
+					ymaxval = -1
 
-					cnt = 0
-					val = 0
+					x = []
+					y = []
 
 
-					for word in attribute:
-						try:
-							addval = float(freq_list[word][int(table[-4:])])
-						except KeyError:
-							addval = 0.0
+					for table in tablenames:
 
-						minval = min(minval,addval)
-						maxval = max(maxval,addval)
-
-						if addval==0.0:
-							#print(word+" "+table[-4:])
-							continue
-								
 						
-						val+= addval
-						cnt+=1
+						x.append(table[-4:])
 
-					if cnt==0:
-						avg = 0.0
-					else:
-						avgw = (float)(val/cnt)
-					
-					tot+=avgw
-					
+						try:
+							freqword = float(freq_list[word][int(table[-4:])])
+							cnt+=1
+						except KeyError:
+							freqword = 0.0
 
-				tot/=20
-
-
-			except Exception as e:
-				print(e)
-
-			y.append(attribute[0])
-			x.append(tot)
-			yminval = min(yminval,tot)
-			ymaxval = max(ymaxval,tot)
+						yminval = min(yminval,freqword)
+						ymaxval = max(ymaxval,freqword)
+						tot+=freqword
+						y.append(freqword)
 
 
+				except Exception as e:
+					print(e)
+
+				if cnt==0:
+					avgfreq = 0.0
+				else:
+					avgfreq = float(tot/cnt)
 
 			result_dict = OrderedDict({
-					"Label":attribute[0],
-					"Relative_frequency": tot,
-					"Max_val": maxval,
-					"Min_val": minval
-				})
+				"Word":word,
+				"Category":attribute[0],
+				"Average frequency": avgfreq,
+				"Decade":table[-4:]
+			})
 
 			results.append(result_dict)
 
 
-	plt.plot(x,y)
-	plt.ylabel('Test')
-	plt.xlabel('Relative frequency')
+			plt.plot(x,y)
 
-	plt.title("Labels")
-	plt.yticks(fontsize = 4)
-	
-	plt.xlim(yminval,ymaxval)
-	
-	plt.savefig(pp, format = 'pdf')
-	plt.clf()				
+			
+			plt.yticks(fontsize = 4)
+			plt.xticks(fontsize=4)
+			plt.ylim(yminval,ymaxval)
+			plt.savefig(pp, format = 'pdf')
+			plt.clf()	
+
 
 	pp.close()
 
 df = pd.DataFrame.from_dict(results)
-df.to_csv("avg_freq_per_decade.csv", index = True)
+df.to_csv("avg_freq_per_decade.csv", index = False, sep = '\t')
     
 cnx.close()
 
 print(datetime.datetime.now() - begin_time)
+
+# use case:
+# $python2 average_freq_per_decade.py python_pachankis.txt
 
