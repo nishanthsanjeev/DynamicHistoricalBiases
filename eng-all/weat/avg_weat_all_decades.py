@@ -270,4 +270,4 @@ cnx.close()
 print(datetime.datetime.now() - begin_time)
 
 #use case
-#$python weat_pachankis.py python_pachankis.txt
+#$python avg_weat_all_decades.py python_pachankis.txt
