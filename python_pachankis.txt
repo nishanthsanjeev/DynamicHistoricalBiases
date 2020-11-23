@@ -1,4 +1,3 @@
-Word embedding label	List 1
 autistic	autistic autism disability brain retardation disorder syndrome deficit abnormality behavior awareness handicapped behavioral neurological impaired mental mentally disable retarded schizophrenic hyperactive cognitive hyperactivity compulsive
 bipolar	bipolar manic mania disorder depression synapse mood psychotherapy illness psychiatric mental depressed diagnose depressive psychotic
 blind	blind visionless blindness darkness vision eye disability impairment retina blinded impaired handicapped disable visually partially disabled unable
