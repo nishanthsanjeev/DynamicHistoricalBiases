@@ -14,7 +14,7 @@ import datetime
 import sys
 
 
-cnx = sqlite3.connect('/home/nishanthsanjeev/Harvard/DynWE stuff/eng_all_sgns/vectors.decades.db')
+cnx = sqlite3.connect('vectors.decades.db')
 cnx.text_factory = str
 np.random.seed(111)
 
@@ -233,7 +233,7 @@ if __name__ == '__main__':
 	 "vectors1980", "vectors1990"]
 
 
-	filename = sys.argv[1]
+	filename = '../../baseline.txt'
 
 	with open(filename, 'r') as f:
 		#f.readline()

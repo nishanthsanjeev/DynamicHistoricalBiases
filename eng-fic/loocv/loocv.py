@@ -233,8 +233,7 @@ if __name__ == '__main__':
 
 
 
-	with open("python_pachankis.txt", 'r') as f:
-		f.readline()
+	with open("../../python_pachankis.txt", 'r') as f:
 
 		for line in f:
 			attribute = str(line.rstrip()).split()

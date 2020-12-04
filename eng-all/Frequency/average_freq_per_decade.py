@@ -44,7 +44,7 @@ if __name__ == '__main__':
 	 "vectors1980", "vectors1990"]
 	
 
-	with open('/home/nishanthsanjeev/Harvard/Frequency script/freqs.pkl','r') as fre:
+	with open('/../../freqs.pkl','r') as fre:
 		freq_list = pickle.load(fre)
 
 
@@ -53,7 +53,7 @@ if __name__ == '__main__':
 
 
 
-	with open(filename, 'r') as f:
+	with open('/../python_pachankis.txt', 'r') as f:
 
 		
 
@@ -134,5 +134,4 @@ cnx.close()
 print(datetime.datetime.now() - begin_time)
 
 # use case:
-# $python2 average_freq_per_decade.py python_pachankis.txt
-
+# $python2 average_freq_per_decade.py

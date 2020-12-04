@@ -233,13 +233,10 @@ if __name__ == '__main__':
 
 
 
-	with open("python_pachankis.txt", 'r') as f:
-		f.readline()
+	with open("../../python_pachankis.txt", 'r') as f:
 
 		for line in f:
 			attribute = str(line.rstrip()).split()
-
-
 			
 			try:
 
@@ -251,9 +248,6 @@ if __name__ == '__main__':
 					result_dict["attribute(s)"] = attribute[0] # here, we will want just the first item from each row of the attribute text document
 					results.append(result_dict)
 					
-
-
-	
 
 			except Exception as e:
 				print(e)

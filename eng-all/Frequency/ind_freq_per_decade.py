@@ -12,7 +12,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 import pickle
 import datetime
 import sys
-pp = PdfPages('ind_frequencies.pdf')
+pp = PdfPages('ind_frequencies_meow.pdf')
 
 cnx = sqlite3.connect('/home/nishanthsanjeev/Harvard/DynWE stuff/eng_all_sgns/vectors.decades.db')
 cnx.text_factory = str
@@ -43,24 +43,16 @@ if __name__ == '__main__':
 	 "vectors1920", "vectors1930", "vectors1940", "vectors1950", "vectors1960", "vectors1970", 
 	 "vectors1980", "vectors1990"]
 
-	#tablenames = ["vectors1800", "vectors1810", "vectors1820"]
-	
 
-	with open('/home/nishanthsanjeev/Harvard/Frequency script/freqs.pkl','r') as fre:
+	with open('../freqs.pkl','r') as fre:
 		freq_list = pickle.load(fre)
 
 
-	filename = sys.argv[1]
-
-	# cmap = plt.get_cmap('gnuplot')
-	# colors = [cmap(i) for i in np.linspace(0, 200, 5)]
 	number_of_colors = 25
 	cycol = cycle(['black','dimgray','red','peru','saddlebrown','darkorange','gold','olive','yellowgreen','lawngreen','darkseagreen','forestgreen','aquamarine','deepskyblue','mediumblue','slateblue','darkviolet','violet','deeppink','pink','lightcoral','teal'])
 
-	#color = ["#"+''.join([random.sample('0123456789ABCDEF',6)]) for i in range(number_of_colors)]
 
-
-	with open(filename, 'r') as f:
+	with open('../../python_pachankis.txt', 'r') as f:
 
 		
 
@@ -86,7 +78,6 @@ if __name__ == '__main__':
 
 					for table in tablenames:
 
-						#x.append(int(table[-4:]))
 						x.append(table[-4:])
 
 						try:
@@ -98,7 +89,6 @@ if __name__ == '__main__':
 						ymaxval = max(ymaxval,freqword)
 						y.append(freqword)
 
-						#print(int(table[-4:]))
 
 						result_dict = OrderedDict({
 								"Word":word,
@@ -121,15 +111,6 @@ if __name__ == '__main__':
 					print(e)
 
 
-			# result_dict = OrderedDict({
-			# 		"Label":attribute[0],
-			# 		"Relative_frequency": tot,
-			# 		"Max_val": maxval,
-			# 		"Min_val": minval
-			# 	})
-
-			# results.append(result_dict)
-
 			
 			plt.yticks(fontsize = 4)
 			plt.xticks(fontsize=4)
@@ -142,11 +123,11 @@ if __name__ == '__main__':
 	pp.close()
 
 df = pd.DataFrame.from_dict(results)
-df.to_csv("ind_freq_per_decade.csv", index = False, sep = '\t')
+df.to_csv("ind_freq_per_decade_meow.csv", index = False, sep = '\t')
     
 cnx.close()
 
 print(datetime.datetime.now() - begin_time)
 
 # use case:
-# $python2 average_freq_per_decade.py python_pachankis.txt
+# $python2 average_freq_per_decade.py

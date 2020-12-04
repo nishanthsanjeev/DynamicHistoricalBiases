@@ -25,9 +25,7 @@ cur.execute('DROP TABLE IF EXISTS vectors1960;')
 cur.execute('DROP TABLE IF EXISTS vectors1970;')
 cur.execute('DROP TABLE IF EXISTS vectors1980;')
 cur.execute('DROP TABLE IF EXISTS vectors1990;')
-#cur.execute('DROP TABLE IF EXISTS vectors2000;')
 
-#cur.execute('DROP TABLE IF EXISTS vectorsNish;')
 
 cur.execute('CREATE TABLE vectors1800 (word VARCHAR(255), vector TEXT, PRIMARY KEY (word));')
 cur.execute('CREATE TABLE vectors1810 (word VARCHAR(255), vector TEXT, PRIMARY KEY (word));')
@@ -49,16 +47,12 @@ cur.execute('CREATE TABLE vectors1960 (word VARCHAR(255), vector TEXT, PRIMARY K
 cur.execute('CREATE TABLE vectors1970 (word VARCHAR(255), vector TEXT, PRIMARY KEY (word));')
 cur.execute('CREATE TABLE vectors1980 (word VARCHAR(255), vector TEXT, PRIMARY KEY (word));')
 cur.execute('CREATE TABLE vectors1990 (word VARCHAR(255), vector TEXT, PRIMARY KEY (word));')
-#cur.execute('CREATE TABLE vectors2000 (word VARCHAR(255), vector TEXT, PRIMARY KEY (word));')
 
-#cur.execute('CREATE TABLE vectorsNish (word VARCHAR(255), vector TEXT, PRIMARY KEY(word));')
 
 tablenames = ["vectors1800", "vectors1810", "vectors1820", "vectors1830", "vectors1840", "vectors1850", "vectors1860", "vectors1870", "vectors1880", "vectors1890", "vectors1900", "vectors1910", "vectors1920", "vectors1930", "vectors1940", "vectors1950", "vectors1960", "vectors1970", "vectors1980", "vectors1990"]
 filenames = ["vectors1800.txt", "vectors1810.txt", "vectors1820.txt", "vectors1830.txt", "vectors1840.txt", "vectors1850.txt", "vectors1860.txt", "vectors1870.txt", "vectors1880.txt", "vectors1890.txt", "vectors1900.txt", "vectors1910.txt", "vectors1920.txt", "vectors1930.txt", "vectors1940.txt", "vectors1950.txt", "vectors1960.txt", "vectors1970.txt", "vectors1980.txt", "vectors1990.txt"]
 
 
-#tablenames = ["vectorsNish"]
-#filenames = ["FTmodTessa"]
 
 for tablename, filename in zip(tablenames, filenames):
     with open(filename, 'r',encoding = 'utf-8', errors='ignore') as f:

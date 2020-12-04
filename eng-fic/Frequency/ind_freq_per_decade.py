@@ -43,21 +43,17 @@ if __name__ == '__main__':
 	 "vectors1920", "vectors1930", "vectors1940", "vectors1950", "vectors1960", "vectors1970", 
 	 "vectors1980", "vectors1990"]
 
-	#tablenames = ["vectors1800", "vectors1810", "vectors1820"]
-	
 
-	with open('/media/nishanthsanjeev/2CC66AE5C66AAF30/Embeddings/eng-fiction-all/freqs.pkl','r') as fre:
+	with open('../freqs.pkl','r') as fre:
 		freq_list = pickle.load(fre)
 
 
-	filename = sys.argv[1]
+	filename = '../../python_pachankis.txt'
 
-	# cmap = plt.get_cmap('gnuplot')
-	# colors = [cmap(i) for i in np.linspace(0, 200, 5)]
 	number_of_colors = 25
 	cycol = cycle(['black','dimgray','red','peru','saddlebrown','darkorange','gold','olive','yellowgreen','lawngreen','darkseagreen','forestgreen','aquamarine','deepskyblue','mediumblue','slateblue','darkviolet','violet','deeppink','pink','lightcoral','teal'])
 
-	#color = ["#"+''.join([random.sample('0123456789ABCDEF',6)]) for i in range(number_of_colors)]
+
 
 
 	with open(filename, 'r') as f:
@@ -86,7 +82,6 @@ if __name__ == '__main__':
 
 					for table in tablenames:
 
-						#x.append(int(table[-4:]))
 						x.append(table[-4:])
 
 						try:
@@ -98,7 +93,6 @@ if __name__ == '__main__':
 						ymaxval = max(ymaxval,freqword)
 						y.append(freqword)
 
-						#print(int(table[-4:]))
 
 						result_dict = OrderedDict({
 								"Word":word,
@@ -110,25 +104,14 @@ if __name__ == '__main__':
 						results.append(result_dict)
 
 
-					#plt.plot(x,y, color = color[colcnt], label = word)
 					plt.plot(x,y, color = cycol.next(), label = word)
-					#plt.plot(x,y,label = word)
+					
 					colcnt+=1
 								
 
 
 				except Exception as e:
 					print(e)
-
-
-			# result_dict = OrderedDict({
-			# 		"Label":attribute[0],
-			# 		"Relative_frequency": tot,
-			# 		"Max_val": maxval,
-			# 		"Min_val": minval
-			# 	})
-
-			# results.append(result_dict)
 
 			
 			plt.yticks(fontsize = 4)
@@ -149,4 +132,4 @@ cnx.close()
 print(datetime.datetime.now() - begin_time)
 
 # use case:
-# $python2 average_freq_per_decade.py python_pachankis.txt
+# $python2 average_freq_per_decade.py

@@ -22,3 +22,4 @@ Python3
 
 Note: When running the *freqscript.py* file - make sure to run using Python2!
 All other .py files - Python3 works just fine.
+Nishanth - find a way to add the freq.pkl files for eng-all and eng-fic. (Git LFS?)

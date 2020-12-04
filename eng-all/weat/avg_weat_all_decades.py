@@ -197,7 +197,7 @@ if __name__ == '__main__':
 
 	results = []
 
-	filename = sys.argv[1]
+	filename = '../../python_pachankis.txt'
 
 	tablenames = ["vectors1800", "vectors1810", "vectors1820", "vectors1830", "vectors1840", "vectors1850",
 	 "vectors1860", "vectors1870", "vectors1880", "vectors1890", "vectors1900", "vectors1910", 
@@ -205,7 +205,6 @@ if __name__ == '__main__':
 	 "vectors1980", "vectors1990"]
 
 	with open(filename, 'r') as f:
-		#f.readline()
 
 		x = []
 		y = []
@@ -270,4 +269,4 @@ cnx.close()
 print(datetime.datetime.now() - begin_time)
 
 #use case
-#$python avg_weat_all_decades.py python_pachankis.txt
+#$python avg_weat_all_decades.py
