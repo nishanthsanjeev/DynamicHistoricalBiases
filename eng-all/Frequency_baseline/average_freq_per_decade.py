@@ -115,8 +115,7 @@ if __name__ == '__main__':
 
 			result_dict = OrderedDict({
 				"Category":attribute[0],
-				"Average frequency": catfreq,
-				"Decade":table[-4:]
+				"Average frequency": catfreq
 			})
 
 			results.append(result_dict)
