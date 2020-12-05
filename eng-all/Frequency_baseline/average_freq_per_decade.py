@@ -1,3 +1,17 @@
+'''
+
+This script is used to find the "average frequency" of each category. The process is as follows:
+
+For each category, iterate through its stimuli list, and find the individual frequencies of each word, per decade.
+
+
+Let's say, a particular category has 20 words. For each of these words, retrieve their average frequency across all decades.
+
+Finally, sum those frequencys to get the average frequency of the category occurring in the corpus.
+
+
+'''
+
 import sqlite3
 import json
 import random
@@ -13,12 +27,8 @@ import pickle
 import datetime
 import sys
 pp = PdfPages('avg_frequencies_baseline.pdf')
-
-cnx = sqlite3.connect('/home/nishanthsanjeev/Harvard/DynWE stuff/eng_all_sgns/vectors.decades.db')
-cnx.text_factory = str
 np.random.seed(111)
 
-cur = cnx.cursor()
 
 memorybank = {}
 
@@ -44,18 +54,12 @@ if __name__ == '__main__':
 	 "vectors1980", "vectors1990"]
 	
 
-	with open('../freqs.pkl','r') as fre:
-		freq_list = pickle.load(fre)
-
-
-	filename = '../../python_pachankis.txt'
+	with open('/../../freqs.pkl','r') as fre:
+		freq_list = pickle.load(fre)#Stores historical word frequencies per decade; retrieved from HistWords
 
 
 
-
-	with open(filename, 'r') as f:
-
-		
+	with open('/../baseline.txt', 'r') as f:	
 
 		for line in f:
 			attribute = str(line.rstrip()).split()
@@ -69,6 +73,7 @@ if __name__ == '__main__':
 
 			tot = 0.0
 			cnt=0
+			catfreq=0.0
 			for word in attribute[1:]:
 
 				try:
@@ -86,28 +91,31 @@ if __name__ == '__main__':
 
 						try:
 							freqword = float(freq_list[word][int(table[-4:])])
-							cnt+=1
-						except KeyError:
+							cnt+=1#keeps track of number of decades where 'word' is found in the corpus
+						except KeyError:#if 'word' is not found for this particular decade
 							freqword = 0.0
 
 						yminval = min(yminval,freqword)
 						ymaxval = max(ymaxval,freqword)
-						tot+=freqword
+						tot+=freqword#Adds on the individual frequency contributed by each word
 						y.append(freqword)
+
+					if cnt==0:
+						avgfreq = 0.0
+					else:
+						avgfreq = float(tot/cnt)#the average frequency of 'word' across all decades
+
+					catfreq+=avgfreq
 
 
 				except Exception as e:
 					print(e)
 
-				if cnt==0:
-					avgfreq = 0.0
-				else:
-					avgfreq = float(tot/cnt)
+				
 
 			result_dict = OrderedDict({
-				"Word":word,
 				"Category":attribute[0],
-				"Average frequency": avgfreq,
+				"Average frequency": catfreq,
 				"Decade":table[-4:]
 			})
 
@@ -128,11 +136,8 @@ if __name__ == '__main__':
 
 df = pd.DataFrame.from_dict(results)
 df.to_csv("avg_freq_per_decade_baseline.csv", index = False, sep = '\t')
-    
-cnx.close()
 
 print(datetime.datetime.now() - begin_time)
 
 # use case:
 # $python2 average_freq_per_decade.py
-
