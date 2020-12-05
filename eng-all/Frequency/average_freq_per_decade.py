@@ -48,9 +48,6 @@ if __name__ == '__main__':
 		freq_list = pickle.load(fre)
 
 
-	filename = sys.argv[1]
-
-
 
 
 	with open('/../python_pachankis.txt', 'r') as f:
