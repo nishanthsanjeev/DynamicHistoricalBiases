@@ -12,9 +12,9 @@ from matplotlib.backends.backend_pdf import PdfPages
 import pickle
 import datetime
 import sys
-pp = PdfPages('ind_frequencies_meow.pdf')
+pp = PdfPages('ind_frequencies.pdf')
 
-cnx = sqlite3.connect('/home/nishanthsanjeev/Harvard/DynWE stuff/eng_all_sgns/vectors.decades.db')
+cnx = sqlite3.connect('vectors.decades.db')
 cnx.text_factory = str
 np.random.seed(111)
 
@@ -123,7 +123,7 @@ if __name__ == '__main__':
 	pp.close()
 
 df = pd.DataFrame.from_dict(results)
-df.to_csv("ind_freq_per_decade_meow.csv", index = False, sep = '\t')
+df.to_csv("ind_freq_per_decade.csv", index = False, sep = '\t')
     
 cnx.close()
 
