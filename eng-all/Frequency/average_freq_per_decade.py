@@ -7,7 +7,7 @@ For each category, iterate through its stimuli list, and find the individual fre
 
 Let's say, a particular category has 20 words. For each of these words, retrieve their average frequency across all decades.
 
-Finally, sum those frequencys to get the average frequency of the category occurring in the corpus.
+Finally, sum those frequencies to get the average frequency of the category occurring in the corpus.
 
 
 '''
