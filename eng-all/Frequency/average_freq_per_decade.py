@@ -91,8 +91,6 @@ if __name__ == '__main__':
 
 						try:
 							freqword = float(freq_list[word][int(table[-4:])])
-							print(freqword)
-							print("\n")
 							cnt+=1#keeps track of number of decades where 'word' is found in the corpus
 						except KeyError:#if 'word' is not found for this particular decade
 							freqword = 0.0
