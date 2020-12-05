@@ -54,12 +54,12 @@ if __name__ == '__main__':
 	 "vectors1980", "vectors1990"]
 	
 
-	with open('/../../freqs.pkl','r') as fre:
+	with open('../../freqs.pkl','r') as fre:
 		freq_list = pickle.load(fre)#Stores historical word frequencies per decade; retrieved from HistWords
 
 
 
-	with open('/../baseline.txt', 'r') as f:	
+	with open('../../baseline.txt', 'r') as f:	
 
 		for line in f:
 			attribute = str(line.rstrip()).split()
