@@ -14,7 +14,7 @@ Google N-grams eng-fic <br />
 *Corpus of Historical American English* (COHA)
 
 ## Requirements:
-R
+R <br />
 Python2 <br />
 Python3
 
@@ -25,9 +25,9 @@ Click [here](http://snap.stanford.edu/historical_embeddings/eng-all.zip) to down
 ## 2) Generate .txt word vector files:
 
 Run the file titled 'readpklandnpy.R'
-
+<br />
 
 ## Information on each file:
 
-Note: When running the *freqscript.py* file - make sure to run using Python2!
+Note: When running the *freqscript.py* file - make sure to run using Python2!<br />
 All other .py files - Python3 works just fine.
