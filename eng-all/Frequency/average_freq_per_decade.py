@@ -54,7 +54,7 @@ if __name__ == '__main__':
 	 "vectors1980", "vectors1990"]
 	
 
-	with open('/../../freqs.pkl','r') as fre:
+	with open('/../../freqs.pkl','r') as fre:#Change directory to where the file is stored after downloading the zip file in Step 1
 		freq_list = pickle.load(fre)#Stores historical word frequencies per decade; retrieved from HistWords
 
 
