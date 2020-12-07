@@ -37,9 +37,18 @@ Go to the *eng-all* directory, and run the .py files present in each folder (Fre
 
 Frequency files:
 
-*average_freq_per_decade.py* - Measures how frequently the words that compose a category occur over all decades. Open file for more information. <br />
+*average_freq_all_decades.py* - Measures how frequently the words that compose a category occur over all decades. Open file for more information. The plot file that is generated however, measures frequency *per decade* instead. (Need to make changes) <br />
 
-*ind_freq_per_decade.py* - 
+*ind_freq_per_decade.py* - Find the individual frequency of each word in a stigma category, per decade.<br />
+
+LOOCV:
+
+*loocv.py* - Computes a list of WEAT effect sizes, as a cross-validation technique. (Leave-one-out-cross-validation)<br />
+
+WEAT:
+
+*avg_weat_all_decades.py* - Computes avg WEAT effect size across all decades.<br />
+*weat_decade.py* - Computes WEAT effect size per decade for each stigma category.<br />
 
 
 
