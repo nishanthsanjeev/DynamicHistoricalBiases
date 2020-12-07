@@ -79,5 +79,4 @@ for tablename, filename in zip(tablenames, filenames):
 
 cnx.close()
 
-## cd /Users/tessacharlesworth/Dropbox/1\ -\ Research\ Projects/22\ -\ Hist\ Embeddings/vectors/normalized_clean/sgns 
 ## python3 import_histvecs.py
