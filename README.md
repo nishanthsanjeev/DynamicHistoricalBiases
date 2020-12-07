@@ -33,9 +33,9 @@ Run the file titled *'import_histvecs.py'*.
 
 ## 4) Reproduce results:
 
-Go to the *eng-all* directory, and run the .py files present in each folder (Frequency, loocv, and weat) to reproduce results so far. Make sure to change directories where applicable.
+Go to the *eng-all* directory, and run the .py files present in each folder (Frequency, loocv, and weat) to reproduce results so far. Make sure to change directories where applicable. Their equivalent baseline folders (i.e., Frequency_baseline, etc) may also be found, and the user can reproduce these as a baseline test.
 
-## Information on each file:
+## Additional information:
 
 Note: When running the Python frequency scripts - make sure to run using Python2.<br />
 All other .py files - Python3 works just fine.
