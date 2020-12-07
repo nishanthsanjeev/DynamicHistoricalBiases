@@ -13,7 +13,7 @@ import pickle
 import datetime
 
 
-cnx = sqlite3.connect('vectors.decades.db')
+cnx = sqlite3.connect('vectors.decades.db')#Change file directory
 cnx.text_factory = str
 np.random.seed(111)
 
