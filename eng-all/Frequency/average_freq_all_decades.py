@@ -7,7 +7,7 @@ For each category, iterate through its stimuli list, and find the individual fre
 
 Let's say, a particular category has 20 words. For each of these words, retrieve their average frequency across all decades.
 
-Finally, sum those frequencies to get the average frequency of the category occurring in the corpus.
+Finally, sum those frequencies to get the average frequency of the category occurring in the corpus, across all decades.
 
 
 '''
@@ -134,9 +134,9 @@ if __name__ == '__main__':
 	pp.close()
 
 df = pd.DataFrame.from_dict(results)
-df.to_csv("avg_freq_per_decade.csv", index = False, sep = '\t')
+df.to_csv("avg_freq_all_decades.csv", index = False, sep = '\t')
 
 print(datetime.datetime.now() - begin_time)
 
 # use case:
-# $python2 average_freq_per_decade.py
+# $python2 average_freq_all_decades.py
