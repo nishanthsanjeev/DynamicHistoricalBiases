@@ -9,8 +9,8 @@ We utilize **HistWords**, a brilliant collection of pre-trained vectors availabl
 
 Here, we provide the tools to conduct analyses on the following corpora:
 
-Google N-grams eng-all <br />
-Google N-grams eng-fic <br />
+Google N-grams eng-all (EngAll) <br />
+Google N-grams eng-fic (EngFic) <br />
 *Corpus of Historical American English* (COHA)
 
 ## Requirements:
@@ -24,7 +24,7 @@ Click [here](http://snap.stanford.edu/historical_embeddings/eng-all.zip) to down
 
 ## 2) Generate .txt word vector files:
 
-Run the file titled 'readpklandnpy.R'
+Run the file titled 'readpklandnpy.R'. Make sure it is in the same directory as the file titled 'read_pickle.py'.
 <br />
 
 ## Information on each file:
