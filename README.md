@@ -35,7 +35,12 @@ Run the file titled *'import_histvecs.py'*.
 
 Go to the *eng-all* directory, and run the .py files present in each folder (Frequency, loocv, and weat) to reproduce results so far. Make sure to change directories where applicable. Their equivalent baseline folders (i.e., Frequency_baseline, etc) may also be found, and the user can reproduce these as a baseline test.
 
-  ## Frequency files:
+Frequency files:
+
+*average_freq_per_decade.py* - Measures how frequently the words that compose a category occur over all decades. Open file for more information. <br />
+
+*ind_freq_per_decade.py* - 
+
 
 
 ## Additional information:
