@@ -20,12 +20,15 @@ Python3
 
 # Steps for reproducing eng-all analyses:
 ## 1) Download pre-trained word vectors from HistWords:
-Click [here](http://snap.stanford.edu/historical_embeddings/eng-all.zip) to download. (Warning: ~8.8 GB in size)
+Click [here](http://snap.stanford.edu/historical_embeddings/eng-all.zip) to download. (Warning: ~8.8 GB download size)
 
 ## 2) Generate .txt word vector files:
 
-Run the file titled 'readpklandnpy.R'. Make sure it is in the same directory as the file titled 'read_pickle.py'.
-<br />
+Run the file titled *'readpklandnpy.R'*. Make sure it is in the same directory as the file titled *'read_pickle.py'*.
+
+## 3) Generate .DB (database) file to store word vectors:
+
+This is done by running the file titled *'import_histvecs.py'*
 
 ## Information on each file:
 
