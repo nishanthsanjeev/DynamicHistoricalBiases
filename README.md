@@ -29,5 +29,5 @@ Run the file titled 'readpklandnpy.R'. Make sure it is in the same directory as 
 
 ## Information on each file:
 
-Note: When running the *freqscript.py* file - make sure to run using Python2!<br />
+Note: When running the Python frequency scripts - make sure to run using Python2.<br />
 All other .py files - Python3 works just fine.
