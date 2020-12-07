@@ -1,7 +1,12 @@
+'''
+Creates a .DB (database) file to efficiently store all word embeddings across every decade.
+Ensure that this file is in the same directory as that of the .txt files generated after Step 2.
+'''
+
 import sqlite3
 import json
 
-cnx = sqlite3.connect('vectors.decades.db')
+cnx = sqlite3.connect('vectors.decades.db')#the new .db file we are creating
 cnx.text_factory = str
 
 cur = cnx.cursor()
