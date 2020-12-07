@@ -15,6 +15,7 @@ Google N-grams eng-fic <br />
 
 
 ## Requirements:
+R
 Python2 <br />
 Python3
 
