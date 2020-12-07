@@ -13,14 +13,21 @@ Google N-grams eng-all <br />
 Google N-grams eng-fic <br />
 *Corpus of Historical American English* (COHA)
 
-
 ## Requirements:
 R
 Python2 <br />
 Python3
 
+# Steps for reproducing eng-all analyses:
+## 1) Download pre-trained word vectors from HistWords:
+Click [here](http://snap.stanford.edu/historical_embeddings/eng-all.zip) to download. (Warning: ~8.8 GB in size)
+
+## 2) Generate .txt word vector files:
+
+Run the file titled 'readpklandnpy.R'
+
+
 ## Information on each file:
 
 Note: When running the *freqscript.py* file - make sure to run using Python2!
 All other .py files - Python3 works just fine.
-Nishanth - find a way to add the freq.pkl files for eng-all and eng-fic. (Git LFS?)
