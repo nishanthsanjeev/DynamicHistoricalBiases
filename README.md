@@ -18,7 +18,8 @@ R <br />
 Python2 <br />
 Python3
 
-# Steps for reproducing eng-all analyses:
+# Steps for reproducing EngAll analyses:
+
 ## 1) Download pre-trained word vectors from HistWords:
 Click [here](http://snap.stanford.edu/historical_embeddings/eng-all.zip) to download. (Warning: ~8.8 GB download size)
 
@@ -28,7 +29,11 @@ Run the file titled *'readpklandnpy.R'*. Make sure it is in the same directory a
 
 ## 3) Generate .DB (database) file to store word vectors:
 
-This is done by running the file titled *'import_histvecs.py'*
+Run the file titled *'import_histvecs.py'*.
+
+## 4) Reproduce results:
+
+Go to the *eng-all* directory, and run the .py files present in each folder (Frequency, loocv, and weat) to reproduce results so far. Make sure to change directories where applicable.
 
 ## Information on each file:
 
