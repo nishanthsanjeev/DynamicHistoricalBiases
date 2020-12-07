@@ -4,7 +4,7 @@ A collection of methods to analyze the changes in social biases and stereotypes 
 
 ## For the historical sources: 
 
-We utilize **HistWords**, a brilliant collection of pre-trained vectors available at: https://nlp.stanford.edu/projects/histwords/
+We utilize **HistWords**, a collection of pre-trained vectors available at: https://nlp.stanford.edu/projects/histwords/
 (Hamilton et al, 2018)
 
 Here, we provide the tools to conduct analyses on the following corpora:
