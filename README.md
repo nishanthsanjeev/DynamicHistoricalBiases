@@ -55,4 +55,6 @@ WEAT:
 ## Additional information:
 
 Note: When running the Python frequency scripts - make sure to run using Python2.<br />
-All other .py files - Python3 works just fine.
+All other .py files - Python3 works just fine.<br />
+
+*python_pachankis.txt* - Contains the stimuli lists for each of the categories we analyse in our study.
