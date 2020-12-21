@@ -57,6 +57,7 @@ if __name__ == '__main__':
 		
 
 		for line in f:
+			catfreq = 0.0
 			attribute = str(line.rstrip()).split()
 
 			yminval = 1000#used to define the visible ranges in the plot
@@ -67,7 +68,6 @@ if __name__ == '__main__':
 
 			plt.title(attribute[0])
 
-			colcnt = 1
 
 			for word in attribute[1:]:
 				try:
@@ -88,23 +88,19 @@ if __name__ == '__main__':
 						yminval = min(yminval,freqword)
 						ymaxval = max(ymaxval,freqword)
 						y.append(freqword)
+						catfreq+=freqword
 
 
 						result_dict = OrderedDict({
-								"Word":word,
+								#"Word":word,
 								"Category":attribute[0],
-								"Frequency": freqword,
+								"Frequency": catfreq,
 								"Decade":table[-4:]
 							})
 
 						results.append(result_dict)
 
-
-					#plt.plot(x,y, color = color[colcnt], label = word)
 					plt.plot(x,y, color = cycol.next(), label = word)
-					#plt.plot(x,y,label = word)
-					colcnt+=1
-								
 
 
 				except Exception as e:
