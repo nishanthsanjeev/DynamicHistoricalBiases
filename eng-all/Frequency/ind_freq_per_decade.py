@@ -52,12 +52,11 @@ if __name__ == '__main__':
 	cycol = cycle(['black','dimgray','red','peru','saddlebrown','darkorange','gold','olive','yellowgreen','lawngreen','darkseagreen','forestgreen','aquamarine','deepskyblue','mediumblue','slateblue','darkviolet','violet','deeppink','pink','lightcoral','teal'])
 
 
-	with open('../../python_pachankis.txt', 'r') as f:
+	with open('../../orig_python_pachankis.txt', 'r') as f:
 
 		
 
 		for line in f:
-			catfreq = 0.0
 			attribute = str(line.rstrip()).split()
 
 			yminval = 1000#used to define the visible ranges in the plot
@@ -67,6 +66,36 @@ if __name__ == '__main__':
 			plt.xlabel('Decade')
 
 			plt.title(attribute[0])
+
+			catfreq=0.0
+
+			for table in tablenames:
+				try:
+
+					year = table[-4:]
+
+					for word in attribute[1:]:
+						try:
+							freqword = float(freq_list[word][int(year)])
+						except KeyError:
+							freqword = 0.0
+						catfreq+=freqword
+
+
+					result_dict = OrderedDict({
+							#"Word":word,
+							"Category":attribute[0],
+							"Frequency": catfreq,
+							"Decade":table[-4:]
+						})
+
+					results.append(result_dict)
+
+
+
+				except Exception as e:
+					print(e)
+
 
 
 			for word in attribute[1:]:
@@ -88,24 +117,13 @@ if __name__ == '__main__':
 						yminval = min(yminval,freqword)
 						ymaxval = max(ymaxval,freqword)
 						y.append(freqword)
-						catfreq+=freqword
-
-
-						result_dict = OrderedDict({
-								#"Word":word,
-								"Category":attribute[0],
-								"Frequency": catfreq,
-								"Decade":table[-4:]
-							})
-
-						results.append(result_dict)
+						#catfreq+=freqword
+	
 
 					plt.plot(x,y, color = cycol.next(), label = word)
 
-
 				except Exception as e:
 					print(e)
-
 
 			
 			plt.yticks(fontsize = 4)
