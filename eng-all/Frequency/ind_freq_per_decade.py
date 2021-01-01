@@ -67,6 +67,9 @@ if __name__ == '__main__':
 
 			plt.title(attribute[0])
 
+
+
+			#Creating frequency table
 			catfreq=0.0
 
 			for table in tablenames:
@@ -97,7 +100,7 @@ if __name__ == '__main__':
 					print(e)
 
 
-
+			#Now, creating individual plots
 			for word in attribute[1:]:
 				try:
 
@@ -117,7 +120,6 @@ if __name__ == '__main__':
 						yminval = min(yminval,freqword)
 						ymaxval = max(ymaxval,freqword)
 						y.append(freqword)
-						#catfreq+=freqword
 	
 
 					plt.plot(x,y, color = cycol.next(), label = word)
