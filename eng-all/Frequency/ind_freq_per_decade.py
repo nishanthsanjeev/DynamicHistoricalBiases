@@ -52,7 +52,7 @@ if __name__ == '__main__':
 	cycol = cycle(['black','dimgray','red','peru','saddlebrown','darkorange','gold','olive','yellowgreen','lawngreen','darkseagreen','forestgreen','aquamarine','deepskyblue','mediumblue','slateblue','darkviolet','violet','deeppink','pink','lightcoral','teal'])
 
 
-	with open('../../orig_python_pachankis.txt', 'r') as f:
+	with open('../../python_pachankis.txt', 'r') as f:
 
 		
 
