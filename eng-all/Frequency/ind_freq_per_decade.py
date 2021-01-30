@@ -70,12 +70,13 @@ if __name__ == '__main__':
 
 
 			#Creating frequency table
-			catfreq=0.0
+			#catfreq=0.0
 
 			for table in tablenames:
 				try:
 
 					year = table[-4:]
+					catfreq=0.0
 
 					for word in attribute[1:]:
 						try:
