@@ -82,7 +82,6 @@ if __name__ == '__main__':
 
 
 					result_dict = OrderedDict({
-							#"Word":word,
 							"Category":attribute[0],
 							"Frequency": catfreq,
 							"Decade":table[-4:]
