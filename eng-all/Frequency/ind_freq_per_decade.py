@@ -14,11 +14,7 @@ import datetime
 import sys
 pp = PdfPages('ind_frequencies.pdf')
 
-cnx = sqlite3.connect('vectors.decades.db')
-cnx.text_factory = str
 np.random.seed(111)
-
-cur = cnx.cursor()
 
 memorybank = {}
 
@@ -141,8 +137,6 @@ if __name__ == '__main__':
 
 df = pd.DataFrame.from_dict(results)
 df.to_csv("ind_freq_per_decade.csv", index = False, sep = '\t')
-    
-cnx.close()
 
 print(datetime.datetime.now() - begin_time)
 
