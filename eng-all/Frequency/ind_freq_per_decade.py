@@ -66,7 +66,6 @@ if __name__ == '__main__':
 
 
 			#Creating frequency table
-			#catfreq=0.0
 
 			for table in tablenames:
 				try:
