@@ -30,9 +30,6 @@ pp = PdfPages('avg_frequencies.pdf')
 np.random.seed(111)
 
 
-memorybank = {}
-
-
 if __name__ == '__main__':
 
 	begin_time = datetime.datetime.now()
